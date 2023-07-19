@@ -90,6 +90,10 @@ fake_async
 2.12
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/fake_async-1.3.1/
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/fake_async-1.3.1/lib/
+ffi
+2.17
+file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/ffi-2.0.2/
+file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/ffi-2.0.2/lib/
 file
 3.0
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/file-7.0.0/
@@ -226,6 +230,14 @@ sqflite_common
 2.18
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common-2.4.5+1/
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common-2.4.5+1/lib/
+sqflite_common_ffi
+2.18
+file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common_ffi-2.2.5/
+file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common_ffi-2.2.5/lib/
+sqlite3
+3.0
+file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/sqlite3-2.0.0/
+file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/sqlite3-2.0.0/lib/
 stack_trace
 2.18
 file:///C:/Users/user/AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.11.0/
