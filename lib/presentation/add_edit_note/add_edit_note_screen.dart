@@ -68,7 +68,7 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
             TextField(
               controller: _titleController,
               maxLines: 1,
-              style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     color: darkGray,
                   ),
               decoration: const InputDecoration(
@@ -79,7 +79,7 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
             TextField(
               controller: _contentController,
               maxLines: null,
-              style: Theme.of(context).textTheme.bodySmall!.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     color: darkGray,
                   ),
               decoration: const InputDecoration(
