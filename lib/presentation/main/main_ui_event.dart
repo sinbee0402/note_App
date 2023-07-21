@@ -8,5 +8,5 @@ part 'main_ui_event.freezed.dart';
 sealed class MainUiEvent<T> with _$MainUiEvent<T> {
   const factory MainUiEvent.loadNotes() = LoadNotes;
   const factory MainUiEvent.deleteNote(Note note) = DeleteNote;
-  const factory MainUiEvent.restoreNote(Note note) = RestoreNote;
+  const factory MainUiEvent.restoreNote() = RestoreNote;
 }

@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_note_app/domain/model/note.dart';
 import 'package:flutter_note_app/domain/repository/note_repository.dart';
@@ -14,7 +12,9 @@ class MainViewModel with ChangeNotifier {
 
   Note? _recentlyDeletedNote;
 
-  MainViewModel(this.repository);
+  MainViewModel(this.repository) {
+    _loadNotes();
+  }
 
   void onEvent(MainUiEvent event) {
     // 26 첫번째 viewModel 작성
