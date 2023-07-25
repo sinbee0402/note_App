@@ -26,6 +26,11 @@ class MainViewModel with ChangeNotifier {
         _deleteNote;
       case RestoreNote():
         _restoreNote;
+      case ChangeOrder(:final noteOrder):
+        _state = state.copyWith(
+          noteOrder: noteOrder,
+        );
+        _loadNotes();
     }
   }
 
