@@ -4,7 +4,9 @@ import 'package:flutter_note_app/domain/model/note.dart';
 import 'package:flutter_note_app/domain/use_case/use_cases.dart';
 import 'package:flutter_note_app/presentation/main/main_state.dart';
 import 'package:flutter_note_app/presentation/main/main_ui_event.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class MainViewModel with ChangeNotifier {
   final UseCases useCases;
 

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_note_app/domain/model/note.dart';
 import 'package:flutter_note_app/presentation/add_edit_note/add_edit_note_event.dart';
+import 'package:flutter_note_app/presentation/add_edit_note/add_edit_note_ui_event.dart';
 import 'package:flutter_note_app/presentation/add_edit_note/add_edit_note_view_model.dart';
 import 'package:flutter_note_app/ui/colors.dart';
 import 'package:provider/provider.dart';
@@ -36,24 +37,23 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
   void initState() {
     super.initState();
 
-    if (widget.note != null) {
-      _titleController.text = widget.note!.title;
-      _contentController.text = widget.note!.content;
-    }
-
     Future.microtask(() {
       final viewModel = context.read<AddEditNoteViewModel>();
 
+      if (widget.note != null) {
+        _titleController.text = widget.note!.title;
+        _contentController.text = widget.note!.content;
+        viewModel.onEvent(AddEditNoteEvent.changeColor(widget.note!.color));
+      }
+
       _streamSubscription = viewModel.eventStream.listen((event) {
-        event.when(
-          saveNote: () {
+        switch (event) {
+          case SavedNote():
             Navigator.pop(context, true);
-          },
-          showSnackBar: (String message) {
+          case ShowSnackBar(:final message):
             final snackBar = SnackBar(content: Text(message));
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
-          },
-        );
+        }
       });
     });
   }

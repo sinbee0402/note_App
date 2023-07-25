@@ -6,7 +6,9 @@ import 'package:flutter_note_app/domain/repository/note_repository.dart';
 import 'package:flutter_note_app/presentation/add_edit_note/add_edit_note_event.dart';
 import 'package:flutter_note_app/presentation/add_edit_note/add_edit_note_ui_event.dart';
 import 'package:flutter_note_app/ui/colors.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class AddEditNoteViewModel with ChangeNotifier {
   final NoteRepository repository;
 
@@ -26,6 +28,7 @@ class AddEditNoteViewModel with ChangeNotifier {
         _changeColor(color);
       case SaveNote(:final id, :final title, :final content):
         _saveNote;
+      //_saveNote(id, title, content);
     }
   }
 
@@ -62,6 +65,6 @@ class AddEditNoteViewModel with ChangeNotifier {
       );
     }
 
-    _eventController.add(const AddEditNoteUiEvent.saveNote());
+    _eventController.add(const AddEditNoteUiEvent.savedNote());
   }
 }
