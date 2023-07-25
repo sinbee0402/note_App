@@ -22,7 +22,9 @@ class MainScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              viewModel.onEvent(const MainUiEvent.toggleOrderSection());
+            },
             icon: const Icon(Icons.sort),
           )
         ],
@@ -45,11 +47,16 @@ class MainScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: [
-            OrderSection(
-              noteOrder: state.noteOrder,
-              onOrderChanged: (noteOrder) {
-                viewModel.onEvent(MainUiEvent.changeOrder(noteOrder));
-              },
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              child: state.isOrderSectionVisible
+                  ? OrderSection(
+                      noteOrder: state.noteOrder,
+                      onOrderChanged: (noteOrder) {
+                        viewModel.onEvent(MainUiEvent.changeOrder(noteOrder));
+                      },
+                    )
+                  : Container(),
             ),
             ...state.notes
                 .map(

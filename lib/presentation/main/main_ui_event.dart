@@ -11,4 +11,5 @@ sealed class MainUiEvent<T> with _$MainUiEvent<T> {
   const factory MainUiEvent.deleteNote(Note note) = DeleteNote;
   const factory MainUiEvent.restoreNote() = RestoreNote;
   const factory MainUiEvent.changeOrder(NoteOrder noteOrder) = ChangeOrder;
+  const factory MainUiEvent.toggleOrderSection() = ToggleOrderSection;
 }

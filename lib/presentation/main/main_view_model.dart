@@ -8,7 +8,7 @@ import 'package:flutter_note_app/presentation/main/main_ui_event.dart';
 class MainViewModel with ChangeNotifier {
   final UseCases useCases;
 
-  MainState _state = MainState();
+  MainState _state = const MainState();
   MainState get state => _state;
 
   Note? _recentlyDeletedNote;
@@ -31,6 +31,11 @@ class MainViewModel with ChangeNotifier {
           noteOrder: noteOrder,
         );
         _loadNotes();
+      case ToggleOrderSection():
+        _state = state.copyWith(
+          isOrderSectionVisible: !state.isOrderSectionVisible,
+        );
+        notifyListeners();
     }
   }
 
